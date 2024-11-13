@@ -1,0 +1,151 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0f7fa; 
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.main-content {
+    width: 85%;
+    max-width: 1200px;
+    padding: 30px;
+    background: transparent;  
+    overflow: hidden;
+}
+
+.top-section {
+    display: flex;
+    gap: 20px;
+}
+
+.top-section .card {
+    height: 190px;
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    color: #00796b;
+    margin-bottom: 15px;
+}
+
+.card-header h2 {
+    margin: 0;
+}
+
+.list-panel {
+    padding: 20px;
+    text-align: left;
+    background-color: #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.list-items {
+    list-style: none;
+    padding: 0;
+}
+
+.list-items li {
+    font-size: 1.1rem;
+    color: #00796b;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.list-items li i {
+    color: #00796b;
+    margin-right: 12px;
+    font-size: 1.3rem;
+}
+
+.temperature-card {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.temperature-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.temperature-item {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #00796b;
+}
+
+.temperature-item i {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.table-custom {
+    width: 100%;
+    border-spacing: 0;
+    margin-top: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.table-custom th, .table-custom td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid #00796b;
+}
+
+.table-custom th {
+    background-color: #00796b;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.table-custom td {
+    background-color: #ffffff;
+    font-size: 1.1rem;
+    color: #00796b;
+}
+
+.table-custom tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+.table-custom tr:hover td {
+    background-color: #b0bec5;  
+    color: #333;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .top-section {
+        flex-direction: column;
+        align-items: center;
+    }
+}

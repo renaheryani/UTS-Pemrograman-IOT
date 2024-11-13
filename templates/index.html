@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Suhu dan Kelembapan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="top-section">
+            <div class="card temperature-card">
+                <div class="card-header">
+                    <h2>Informasi Suhu</h2>
+                </div>
+                <div class="temperature-info">
+                    <div class="temperature-item">
+                        <i class="fas fa-thermometer-high"></i>
+                        <span>Maksimum: {{ data['suhumax'] }}°C</span>
+                    </div>
+                    <div class="temperature-item">
+                        <i class="fas fa-thermometer-low"></i>
+                        <span>Minimum: {{ data['suhumin'] }}°C</span>
+                    </div>
+                    <div class="temperature-item">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Rata-rata: {{ data['suhurata'] }}°C</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card list-panel">
+                <h3>Month-Year Max:</h3>
+                <ul class="list-items">
+                    {% for item in data['month_year_max'] %}
+                    <li><i class="fas fa-calendar-alt"></i> {{ item['month_year'] }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="card table-card">
+            <div class="table-container">
+                <table class="table-custom">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Suhu (°C)</th>
+                            <th>Kelembapan (%)</th>
+                            <th>Kecerahan</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in data['nilai_suhu_max_humid_max'] %}
+                        <tr>
+                            <td>{{ item['idx'] }}</td>
+                            <td>{{ item['suhu'] }}°C</td>
+                            <td>{{ item['humid'] }}%</td>
+                            <td>{{ item['kecerahan'] }}</td>
+                            <td>{{ item['timestamp'] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
